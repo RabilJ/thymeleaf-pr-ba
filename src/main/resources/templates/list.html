@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="Zoo"></h1>
+<ul>
+    <li th:each="animal:${anList}">
+    <a th:href="@{/templates/${animal.getName()}|}"
+       th:text="${animal.getName()}"></a>
+        <a th:text="${animal.getSpecies()}"></a>
+    </li>
+
+</ul>
+</body>
+</html>
