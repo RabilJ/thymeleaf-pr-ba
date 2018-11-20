@@ -5,8 +5,21 @@
     <title>Home</title>
 </head>
 <body>
-<form action="list">
-<input type="submit"value="lista">
+
+<ul>
+    <li th:each="animalo: ${anList}">
+        <a th:href="@{|/animal?name=${animalo.getName()}|}"
+           th:text="${animalo.getName()}"></a>
+        <a th:text="${animalo.getSpecies()}"></a>
+    </li>
+</ul>
+<br>
+<form th:action="@{/nowy}" method="get">
+<input type="submit" value="Nowy zwierzak">
+</form>
+<br>
+<form th:action="@{/newToDelete}" method="get">
+    <input type="submit" value="Skasuj gościa">
 </form>
 </body>
 </html>
